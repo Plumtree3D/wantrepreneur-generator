@@ -12,17 +12,19 @@
     </div>
 </body>
 <script> 
+
+function random(max) {
+    return Math.floor(Math.random()*max)
+}
+
 let verbs = ["work","grind","get rich","eat spaghettis","get laid","fight","struggle", "get to the top", "piss", "think"]
 let adverbs = ["harder","better", "faster", "stronger", "more"]
 let nouns = ["fight", "struggle","point","objective","goal"]
-let rand0 = Math.floor(Math.random() * 5);
-let rand1 = Math.floor(Math.random() * 9);
-let rand2 = Math.floor(Math.random() * 9);
-let rand3 = Math.floor(Math.random() * 4);
 
-let templates = ["The "+adverbs[rand0]+" you "+verbs[rand1]+", the "+adverbs[rand0]+" you "+verbs[rand2]+".", 
-"The "+nouns[rand0]+" is not to "+verbs[rand1]+", it's to "+verbs[rand2]+".", 
-"If you keep your "+nouns[rand3]+" in mind, you'll "+verbs[rand1]+" "+adverbs[rand0]+" than you "+verbs[rand2]+"."]
+let templates = ["The "+adverbs[random(adverbs.length)]+" you "+verbs[random(verbs.length)]+", the "+adverbs[random(adverbs.length)]+" you "+verbs[random(verbs.length)]+".", 
+"The "+nouns[random(nouns.length)]+" is not to "+verbs[random(verbs.length)]+", it's to "+verbs[random(verbs.length)]+".", 
+"If you keep your "+nouns[random(nouns.length)]+" in mind, you'll "+verbs[random(verbs.length)]+" "+adverbs[random(adverbs.length)]+" than you "+verbs[random(verbs.length)]+"."]
 
-document.getElementById("text").innerHTML = templates[rand3] </script> 
+
+document.getElementById("text").innerHTML = templates[random(templates.length)] </script> 
 </html>
