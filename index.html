@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p id="text"></p>
+    </div>
+</body>
+<script> 
+let verbs = ["work","grind","get rich","eat spaghettis","get laid","fight","struggle", "get to the top"]
+let adverbs = ["harder","better", "faster", "stronger", "more"]
+
+let rand0 = Math.floor(Math.random() * 6);
+let rand1 = Math.floor(Math.random() * 9);
+let rand2 = Math.floor(Math.random() * 9);
+
+document.getElementById("text").innerHTML = "The "+adverbs[rand0]+" you "+verbs[rand1]+", the "+adverbs[rand0]+" you "+verbs[rand2]+"."</script>
+</html>
