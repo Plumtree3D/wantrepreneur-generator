@@ -12,7 +12,7 @@ const T = new Twit( config );
 
 
 // const API_ID =            
-//      API_KEY =            
+//      API_KEY =             
 
 
 const data = {
@@ -20,9 +20,11 @@ const data = {
     selector: "#container"
   }
 
-const downloadFile = async (fileUrl, downloadFolder) => {
   // Get the file name
   const fileName = "image.jpg";
+
+const downloadFile = async (fileUrl, downloadFolder) => {
+
 
   // The path of the downloaded file on our machine
   const localFilePath = path.resolve(__dirname, downloadFolder, fileName);
@@ -51,9 +53,41 @@ request.post({ url: 'https://hcti.io/v1/image', form: data})
     downloadFile(IMAGE_URL, __dirname);
   })
 
+  console.log( 'opening an image...' );
 
+  const imagePath = path.join( __dirname, fileName ),
+        b64content = fs.readFileSync( imagePath, { encoding: 'base64' } );
 
-// T.post( 'statuses/update', { status: 'Look, I am tweeting!' }, function( err, data, response ) {
-// console.log( data )
-// } );
+  console.log( 'uploading an image...' );
 
+  T.post( 'media/upload', { media_data: b64content }, function ( err, data, response ) {
+    if ( err ){
+      console.log( 'error:', err );
+    }
+    else{
+      const image = data;
+      console.log( 'image uploaded, adding description...' );
+
+      T.post( 'media/metadata/create', {
+        media_id: image.media_id_string,
+        alt_text: {
+          text: 'I am working on the alt text for this bot but since those images are randomly generated it will take some rethinking, sorry'
+        }            
+      }, function( err, data, response ){
+        console.log( 'tweeting the image...' );
+
+        T.post( 'statuses/update', {
+          media_ids: [image.media_id_string]
+        },
+          function( err, data, response) {
+            if (err){
+              console.log( 'error:', err );
+            }
+            else{
+              console.log( 'posted an image!' );
+            };
+          });
+      });
+    };
+  });
+      
