@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Entrepreneur Quotes</title>
+    <link rel="icon" href="favicon.ico" />
     
 </head>
 <body>
     <div id="container">
+        <span id="credits"> </span>
+        <img id="logo" src="logo.png" alt="">
     </div>
-    <span id="credits"> </span>
+
 </body>
 
 <script src="script.js"></script>
@@ -19,16 +22,32 @@
     @import url('https://fonts.googleapis.com/css2?family=Akshar&family=Bebas+Neue&family=Black+Ops+One&family=Graduate&display=swap');
 
     #credits {
+        right: 15px;
+        bottom: 10px;
+        position: absolute;
+        font-size: 22px;
         font-family: 'Akshar', sans-serif;
+        color: rgba(255, 255, 255, 0.524); 
+        text-shadow: 1px 1px 2px black, 0 0 0.5em black;
+    }
+
+    #logo {
+        position: absolute;
+        top: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90px;
+        aspect-ratio: 1 / 1;
     }
 
     #container {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: black;
-        width: 660px;
-        height: 660px;
+        max-width: 660px;
+        aspect-ratio: 1 / 1;
         text-align: center;
         font-size: 45px;
         background-size: cover;
@@ -39,6 +58,7 @@
         color: white; 
         text-shadow: 1px 1px 2px black, 0 0 0.5em black;
         text-transform: uppercase;
+        font-size: calc(15px + 3vw);
     }
 </style>
 </html>

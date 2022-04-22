@@ -23,14 +23,25 @@ const verbs = [
     "think",
     "commit war crimes",
     "hope",
-    "know"]
+    "know",
+    "drink water",
+    "believe",
+    "believe in yourself",
+    "have faith",
+    "change the future",
+    "abandon your child",
+    "lose weight",
+    "gain",
+    "adopt a snake",
+    "exercise"]
 
 const adverbs = [
     "harder", 
     "faster", 
-    "more", 
-    "easier", 
-    "smarter"]
+    "more",  
+    "smarter",
+    "less"
+    ]
 
 const nouns = [
     "fight", 
@@ -38,14 +49,17 @@ const nouns = [
     "point",
     "objective",
     "goal", 
-    "worth"]
+    "worth",
+    "priority",
+    "pain"]
 
 const templates = [
     `The ${adverbs[random(adverbs.length)]} you ${verbs[random(verbs.length)]}, <br> the ${adverbs[random(adverbs.length)]} you ${verbs[random(verbs.length)]}.`, 
     `The ${nouns[random(nouns.length)]} is not to  ${verbs[random(verbs.length)]}, <br> it's to  ${verbs[random(verbs.length)]}.`, 
     `Keep your ${nouns[random(nouns.length)]} in mind,<br> you'll  ${verbs[random(verbs.length)]} ${adverbs[random(adverbs.length)]} than you  ${verbs[random(verbs.length)]}.`,
     `${verbs[random(verbs.length)]} ${adverbs[random(adverbs.length)]}, <br> ${verbs[random(verbs.length)]} ${adverbs[random(adverbs.length)]}.`,
-    `${verbs[random(verbs.length)]}, <br> ${verbs[random(verbs.length)]}, <br> ${verbs[random(verbs.length)]}.` ]
+    `${verbs[random(verbs.length)]}, <br> ${verbs[random(verbs.length)]}, <br> ${verbs[random(verbs.length)]}.`,
+    `To ${verbs[random(verbs.length)]} is your ${nouns[random(nouns.length)]}, <br> to ${verbs[random(verbs.length)]} is your ${nouns[random(nouns.length)]}` ]
 
 const fonts = ["Graduate", "Bebas Neue", "Black Ops One"]
 
@@ -66,4 +80,4 @@ element.innerHTML = shuffleTemplate();
 element.style.cssText = `font-family: ${shuffleFont()}, cursive;`
 document.getElementById("container").style.cssText = `background-image: url('img/${image.name}.jpg');`
 document.getElementById("container").appendChild(element);
-document.getElementById("credits").innerHTML = `Image by ${image.author} on <a href='${image.link}' target=_blank >Pexels</a>`
+document.getElementById("credits").innerHTML = `Image by ${image.author} on Pexels</a>`
